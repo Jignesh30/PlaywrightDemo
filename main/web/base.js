@@ -3,7 +3,7 @@
  * This is used to enter text. It requires three arguments. page, locator value and text to enter
  *
  */
-const {resolve} = require('path');
+const { resolve } = require('path');
 
 export async function fillText(page, locators, text) {
     await page.locator(locators).fill(text);
@@ -20,8 +20,6 @@ export async function getText(page, locators) {
 }
 
 module.exports = {
-    getFilePath,
     fillText,
     getText,
-    getPickDate
 };

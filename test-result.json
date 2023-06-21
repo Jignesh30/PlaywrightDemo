@@ -1,0 +1,122 @@
+{
+  "config": {
+    "configFile": "c:\\Users\\Unity_0026\\PlaywrightDemo\\playwright.config.js",
+    "rootDir": "c:/Users/Unity_0026/PlaywrightDemo/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "totalTime": 26459.5
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-result.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "c:/Users/Unity_0026/PlaywrightDemo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "c:/Users/Unity_0026/PlaywrightDemo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.35.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "myExpenses.spec.js",
+      "file": "myExpenses.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Add new expense (TodayDate)",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 24560,
+                  "error": {
+                    "message": "locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('xpath=//*[@id=\"text-field-identifier\"]')\n============================================================",
+                    "stack": "Error: locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('xpath=//*[@id=\"text-field-identifier\"]')\n============================================================\n    at Object.fillText (c:\\Users\\Unity_0026\\PlaywrightDemo\\main\\web\\base.js:9:34)\n    at myExpensesFunctionsModule.enterEmailId (c:\\Users\\Unity_0026\\PlaywrightDemo\\objectRepository\\myExpensesModule\\myExpensesFunctions.js:12:19)\n    at c:\\Users\\Unity_0026\\PlaywrightDemo\\tests\\myExpenses.spec.js:14:28",
+                    "location": {
+                      "file": "c:\\Users\\Unity_0026\\PlaywrightDemo\\main\\web\\base.js",
+                      "column": 34,
+                      "line": 9
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39m..\\main\\web\\base.js:9\n\n   7 |\n   8 | export async function fillText(page, locators, text) {\n>  9 |     await page.locator(locators).fill(text);\n     |                                  ^\n  10 | }\n  11 |\n  12 | /**"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "c:\\Users\\Unity_0026\\PlaywrightDemo\\main\\web\\base.js",
+                        "column": 34,
+                        "line": 9
+                      },
+                      "message": "Error: locator.fill: Target closed\n=========================== logs ===========================\nwaiting for locator('xpath=//*[@id=\"text-field-identifier\"]')\n============================================================\n\n\u001b[90m   at \u001b[39m..\\main\\web\\base.js:9\n\n   7 |\n   8 | export async function fillText(page, locators, text) {\n>  9 |     await page.locator(locators).fill(text);\n     |                                  ^\n  10 | }\n  11 |\n  12 | /**\n\n\u001b[2m    at Object.fillText (c:\\Users\\Unity_0026\\PlaywrightDemo\\main\\web\\base.js:9:34)\u001b[22m\n\u001b[2m    at myExpensesFunctionsModule.enterEmailId (c:\\Users\\Unity_0026\\PlaywrightDemo\\objectRepository\\myExpensesModule\\myExpensesFunctions.js:12:19)\u001b[22m\n\u001b[2m    at c:\\Users\\Unity_0026\\PlaywrightDemo\\tests\\myExpenses.spec.js:14:28\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-06-21T16:37:19.919Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "c:\\Users\\Unity_0026\\PlaywrightDemo\\main\\web\\base.js",
+                    "column": 34,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ba9e54b1fa9b82e102c1-f10e075b1cb8421acb92",
+          "file": "myExpenses.spec.js",
+          "line": 32,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
