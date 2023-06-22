@@ -1,6 +1,6 @@
 module.exports = {
     emailAddressText: '//*[contains (text(),"Email address")]',
-    emailAddressTextBox: '//*[@id="text-field-identifier"]',
+    emailAddressTextBox: '//input[@name="email"]',
     continueButton: '//*[contains (text(),"Continue")]',
     emailAddressPageLocator: '//div[@class="cl-component cl-sign-in"]',
     checkEmailText: '//*[contains (text(),"Check your email")]',
