@@ -17,14 +17,8 @@ test.beforeEach(async ({ page }) => {
     // Set test timeout
     test.setTimeout(720000000);
     await myExpensesModule.enterOtp(page, '4', '2', '4', '2', '4', '2');
-    await myExpensesModule.whenNeedOfTheTwoTimesOtp(page, '4', '2', '4', '2', '4', '2');
     // Conditional code execution
-    if (!testData.accountantRole) {
-        console.log("The login with Accountant role")
-    } else {
-        await myExpensesModule.clickOnTheCloseButtonOfTheWelcomePage(page);
-        await myExpensesModule.verifyReimbursementsText(page, 'My reimbursements');
-    }
+    await myExpensesModule.verifyReimbursementsText(page, 'My reimbursements');
 });
 
 
@@ -58,10 +52,9 @@ test('Add new expense (TodayDate)', async ({ page, context }) => {
     await myExpensesModule.clickOnTheTheTodayDate(page);
     await myExpensesModule.verifyTheApprovalGroups(page)
     await myExpensesModule.verifyEnterMessageAndClickOnTheSubmitButton(page, 'plutoCard', 'Expense submitted')
-    console.log("Test completed");
 });
 
-test.skip('Add new expense (YesterDayDate)', async ({ page, context }) => {
+test('Add new expense (YesterDayDate)', async ({ page, context }) => {
     //U0F-136 
     await myExpensesModule.clickOnTheNewExpensesButton(page, 'My reimbursements', 'Expense details');
     await myExpensesModule.enterMerchantNameAndMerchantText(page, "Merchant", 'merchant2');
