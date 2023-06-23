@@ -1,3 +1,3 @@
 module.exports = {
-    clerkRole: 'atul+clerk_test@qable.io',
+    clerkRole: 'atul+clerk_test@qable.io'
 }

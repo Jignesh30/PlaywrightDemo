@@ -13,9 +13,7 @@ test.beforeEach(async ({ page }) => {
     await page.goto(use.baseURL);
     await myExpensesModule.enterEmailId(page, testData.clerkRole);
     await myExpensesModule.clickOnTheContinueButton(page);
-    await myExpensesModule.verifyTheEmailText(page, "Check your email");
-    await myExpensesModule.clickOnTheTryAnotherMethodLinkAndVerifyTheText(page);
-    await myExpensesModule.verifySendEmailCode(page);
+    await myExpensesModule.verifyTheEmailText(page, "Email Code");
     // Set test timeout
     test.setTimeout(720000000);
     await myExpensesModule.enterOtp(page, '4', '2', '4', '2', '4', '2');
@@ -27,6 +25,20 @@ test.beforeEach(async ({ page }) => {
         await myExpensesModule.clickOnTheCloseButtonOfTheWelcomePage(page);
         await myExpensesModule.verifyReimbursementsText(page, 'My reimbursements');
     }
+});
+
+
+test('Pluto Reimbursement -[Page]', async ({ page }) => {
+    // u0f -166
+    await myExpensesModule.verifyTheNewExpenseButtonIsVisible(page);
+    await myExpensesModule.verifyTheSearchBoxIsVisible(page);
+    await myExpensesModule.verifyTheFilterButton(page);
+    await myExpensesModule.verifyVisibleTheALlButton(page);
+    await myExpensesModule.verifyTheDraftSectionIsVisible(page);
+    await myExpensesModule.verifyTheVisibleSubmittedSection(page);
+    await myExpensesModule.verifyTheVisibleApprovedSection(page);
+    await myExpensesModule.verifyTheVisibleRejectTab(page);
+    await myExpensesModule.verifyTheVisibleTheReimbursedSection(page)
 });
 
 test('Add new expense (TodayDate)', async ({ page, context }) => {
@@ -68,17 +80,4 @@ test.skip('Add new expense (YesterDayDate)', async ({ page, context }) => {
     await newTab.close();
     await myExpensesModule.verifyEnterMessageAndClickOnTheSubmitButton(page, 'plutoCard', 'Expense submitted')
     console.log("Test completed");
-});
-
-test.skip('Pluto Reimbursement -[Page]', async ({ page }) => {
-    // u0f -166
-    await myExpensesModule.verifyTheNewExpenseButtonIsVisible(page);
-    await myExpensesModule.verifyTheSearchBoxIsVisible(page);
-    await myExpensesModule.verifyTheFilterButton(page);
-    await myExpensesModule.verifyVisibleTheALlButton(page);
-    await myExpensesModule.verifyTheDraftSectionIsVisible(page);
-    await myExpensesModule.verifyTheVisibleSubmittedSection(page);
-    await myExpensesModule.verifyTheVisibleApprovedSection(page);
-    await myExpensesModule.verifyTheVisibleRejectTab(page);
-    await myExpensesModule.verifyTheVisibleTheReimbursedSection(page)
 });
